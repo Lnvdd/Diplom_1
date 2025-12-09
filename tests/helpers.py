@@ -43,3 +43,10 @@ def extract_price_from_receipt(receipt: str) -> float:
 
 def verify_ingredients_in_receipt(receipt: str, ingredient_names: list) -> bool:
     return all(name in receipt for name in ingredient_names)
+
+
+def create_ingredients_list(count: int, ingredient_type: str, price: float) -> list:
+    return [
+        create_mock_ingredient(f"Ingredient_{i}", ingredient_type, price)
+        for i in range(count)
+    ]
